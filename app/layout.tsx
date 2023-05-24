@@ -5,6 +5,7 @@ import './globals.css'
 import NavBar from '@/components/Navbar'
 import { Separator } from '@/components/ui/separator'
 import { Toaster } from '@/components/ui/toaster'
+import { ThemeProvider } from '@/providers/ThemeProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,21 +23,24 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <div className="
+          <ThemeProvider>
+            <div className="
              flex
              min-h-screen
              w-full
              flex-col
              items-center
              dark:bg-black"
-          >
-            <NavBar />
-            <Separator />
-            <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
-              {children}
-              <Toaster />
-            </main>
-          </div></body>
+            >
+              <NavBar />
+              <Separator />
+              <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
+                {children}
+                <Toaster />
+              </main>
+            </div>
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   )
