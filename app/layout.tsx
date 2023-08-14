@@ -21,22 +21,22 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>            <div
-          className="
+        <body className={inter.className}>
+          <div className="
              flex
              min-h-screen
              w-full
              flex-col
              items-center
              dark:bg-black"
-        >
-          <NavBar />
-          <Separator />
-          <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
-            {children}
-            <Toaster />
-          </main>
-        </div></body>
+          >
+            <NavBar />
+            <Separator />
+            <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
+              {children}
+              <Toaster />
+            </main>
+          </div></body>
       </html>
     </ClerkProvider>
   )
