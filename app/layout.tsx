@@ -2,6 +2,9 @@ import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import NavBar from '@/components/Navbar'
+import { Separator } from '@/components/ui/separator'
+import { Toaster } from '@/components/ui/toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +21,22 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>{children}</body>
-
+        <body className={inter.className}>            <div
+          className="
+             flex
+             min-h-screen
+             w-full
+             flex-col
+             items-center
+             dark:bg-black"
+        >
+          <NavBar />
+          <Separator />
+          <main className="flex flex-grow w-full justify-center items-center dark:bg-neutral-950">
+            {children}
+            <Toaster />
+          </main>
+        </div></body>
       </html>
     </ClerkProvider>
   )
