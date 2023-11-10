@@ -33,7 +33,7 @@ import { CollectionColor, CollectionColors } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
-// import { createCollection } from "@/actions/collection";
+import { createCollection } from "@/actions/collection";
 import { toast } from "./ui/use-toast";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
@@ -53,7 +53,7 @@ function CreateCollectionSheet({ open, onOpenChange }: Props) {
 
   const onSubmit = async (data: createCollectionSchemaType) => {
     try {
-      // await createCollection(data);
+      await createCollection(data);
 
       // Close the sheet
       openChangeWrapper(false);
